@@ -118,6 +118,7 @@ export PATH="/Users/jup/.cargo/bin:$PATH"
 compinit conda
 alias activate="source activate"
 alias cmd="gh copilot suggest"
+alias vim="nvim"
 eval "$(zoxide init zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
