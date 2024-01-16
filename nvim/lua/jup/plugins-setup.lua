@@ -33,7 +33,9 @@ return packer.startup(function(use)
 
 	use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
 
+	-- colorschemes
 	use("bluz71/vim-nightfly-guicolors") -- preferred colorscheme
+	use("navarasu/onedark.nvim")
 
 	use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
 
@@ -106,6 +108,9 @@ return packer.startup(function(use)
 
 	-- git integration
 	use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
+
+	-- undo tree
+	use("mbbill/undotree")
 
 	if packer_bootstrap then
 		require("packer").sync()

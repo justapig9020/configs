@@ -186,6 +186,11 @@ _G.packer_plugins = {
     path = "/Users/jup/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
+  ["onedark.nvim"] = {
+    loaded = true,
+    path = "/Users/jup/.local/share/nvim/site/pack/packer/start/onedark.nvim",
+    url = "https://github.com/navarasu/onedark.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/jup/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -210,6 +215,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jup/.local/share/nvim/site/pack/packer/start/typescript.nvim",
     url = "https://github.com/jose-elias-alvarez/typescript.nvim"
+  },
+  undotree = {
+    loaded = true,
+    path = "/Users/jup/.local/share/nvim/site/pack/packer/start/undotree",
+    url = "https://github.com/mbbill/undotree"
   },
   ["vim-ReplaceWithRegister"] = {
     loaded = true,
