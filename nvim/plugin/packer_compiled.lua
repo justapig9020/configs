@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "/Users/jup/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  catppuccin = {
+    loaded = true,
+    path = "/Users/jup/.local/share/nvim/site/pack/packer/start/catppuccin",
+    url = "https://github.com/catppuccin/nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/jup/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -126,6 +131,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jup/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
+  ["leaf.nvim"] = {
+    loaded = true,
+    path = "/Users/jup/.local/share/nvim/site/pack/packer/start/leaf.nvim",
+    url = "https://github.com/daschw/leaf.nvim"
   },
   ["lspkind.nvim"] = {
     loaded = true,
@@ -224,6 +234,11 @@ _G.packer_plugins = {
     path = "/Users/jup/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["transparent.nvim"] = {
+    loaded = true,
+    path = "/Users/jup/.local/share/nvim/site/pack/packer/start/transparent.nvim",
+    url = "https://github.com/xiyaowong/transparent.nvim"
+  },
   ["typescript.nvim"] = {
     loaded = true,
     path = "/Users/jup/.local/share/nvim/site/pack/packer/start/typescript.nvim",
@@ -264,14 +279,14 @@ _G.packer_plugins = {
 time([[Defining packer_plugins]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
-vim.cmd [[ packadd nvim-treesitter ]]
-vim.cmd [[ packadd nvim-ts-autotag ]]
 vim.cmd [[ packadd copilot.lua ]]
 vim.cmd [[ packadd copilot-cmp ]]
 
 -- Config for: copilot-cmp
 try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\16copilot_cmp\frequire\0", "config", "copilot-cmp")
 
+vim.cmd [[ packadd nvim-treesitter ]]
+vim.cmd [[ packadd nvim-ts-autotag ]]
 time([[Sequenced loading]], false)
 
 _G._packer.inside_compile = false

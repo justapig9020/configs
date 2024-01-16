@@ -36,7 +36,10 @@ return packer.startup(function(use)
 	-- colorschemes
 	use("bluz71/vim-nightfly-guicolors") -- preferred colorscheme
 	use("navarasu/onedark.nvim")
+	use({ "catppuccin/nvim", as = "catppuccin" })
+	use("daschw/leaf.nvim")
 
+	--
 	use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
 
 	use("szw/vim-maximizer") -- maximizes and restores current window
@@ -121,6 +124,9 @@ return packer.startup(function(use)
 			require("copilot_cmp").setup()
 		end,
 	})
+
+	-- transparent background
+	use("xiyaowong/transparent.nvim")
 
 	if packer_bootstrap then
 		require("packer").sync()
