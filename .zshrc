@@ -101,7 +101,7 @@ export LANGUAGE=en
 # fi
 
 # Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+# export archflags="-arch x86_64"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -113,12 +113,18 @@ export LANGUAGE=en
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export PATH="/Users/jup/anaconda3/bin:$PATH"
 export PATH="/Users/jup/.cargo/bin:$PATH"
-# eval "$(starship init zsh)"
 
 compinit conda
 alias activate="source activate"
+
+# if profile exists, load it
+if [[ -f $HOME/.profile ]]; then
+  source $HOME/.profile
+fi
+
 alias cmd="gh copilot suggest"
 alias vim="nvim"
+
 eval "$(zoxide init zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
