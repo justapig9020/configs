@@ -4,6 +4,12 @@ if not lspconfig_status then
 	return
 end
 
+-- import lspconfig util safely
+local util_status, util = pcall(require, "lspconfig/util")
+if not util_status then
+	return
+end
+
 -- import cmp-nvim-lsp plugin safely
 local cmp_nvim_lsp_status, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not cmp_nvim_lsp_status then
@@ -118,10 +124,20 @@ lspconfig["clangd"].setup({
 		"clangd",
 		"--offset-encoding=utf-16",
 	},
+	typetypoes = { "c", "cpp" },
 })
 
 -- configure rust server
 lspconfig["rust_analyzer"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
+	filetypes = { "rust" },
+	root_dir = util.root_pattern("Cargo.toml"),
+	setings = {
+		["rust-analyzer"] = {
+			cargo = {
+				allFeatures = true,
+			},
+		},
+	},
 })
