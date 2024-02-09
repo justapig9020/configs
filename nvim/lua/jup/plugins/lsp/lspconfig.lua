@@ -127,17 +127,7 @@ lspconfig["clangd"].setup({
 	typetypoes = { "c", "cpp" },
 })
 
--- configure rust server
-lspconfig["rust_analyzer"].setup({
-	capabilities = capabilities,
+return {
 	on_attach = on_attach,
-	filetypes = { "rust" },
-	root_dir = util.root_pattern("Cargo.toml"),
-	setings = {
-		["rust-analyzer"] = {
-			cargo = {
-				allFeatures = true,
-			},
-		},
-	},
-})
+	capabilities = capabilities,
+}
