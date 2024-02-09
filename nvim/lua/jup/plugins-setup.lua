@@ -145,6 +145,15 @@ return packer.startup(function(use)
 		ft = { "markdown" },
 	})
 
+	-- Rust
+	use({
+		"rust-lang/rust.vim",
+		ft = "rust",
+		init = function()
+			vim.g.rustfmt_autosave = 1
+		end,
+	})
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
