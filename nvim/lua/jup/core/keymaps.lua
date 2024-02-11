@@ -59,3 +59,6 @@ keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if ne
 
 -- undo tree
 keymap.set("n", "<leader>ud", "<cmd>UndotreeToggle<cr>")
+
+-- debug
+keymap.set("n", "<leader>bp", "<cmd> DapToggleBreakpoint<cr>") -- Toggle the breakpoint

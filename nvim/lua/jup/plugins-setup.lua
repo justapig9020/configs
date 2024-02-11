@@ -158,4 +158,18 @@ return packer.startup(function(use)
 	if packer_bootstrap then
 		require("packer").sync()
 	end
+	use({
+		"saecki/crates.nvim",
+		tag = "stable",
+		config = function()
+			require("crates").setup()
+		end,
+	})
+
+	-- Debug
+	use({
+		"mfussenegger/nvim-dap",
+	})
+	use("rcarriga/nvim-dap-ui")
+	use("ldelossa/nvim-dap-projects")
 end)
