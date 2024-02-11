@@ -170,6 +170,12 @@ return packer.startup(function(use)
 	use({
 		"mfussenegger/nvim-dap",
 	})
-	use("rcarriga/nvim-dap-ui")
+	use({
+		"rcarriga/nvim-dap-ui",
+		requires = { "mfussenegger/nvim-dap" },
+		config = function()
+			require("dapui").setup()
+		end,
+	})
 	use("ldelossa/nvim-dap-projects")
 end)
