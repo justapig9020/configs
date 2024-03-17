@@ -30,7 +30,13 @@ null_ls.setup({
 	},
 	-- configure format on save
 	on_attach = function(current_client, bufnr)
-		if current_client.supports_method("textDocument/formatting") then
+		local project_root = vim.fn.getcwd()
+		local disable_file_path = project_root .. "/.clang-format-disable"
+		local enable_auto_format = not (vim.fn.filereadable(disable_file_path) ~= 0)
+		if not enable_auto_format then
+			print("File '" .. disable_file_path .. "' exists. Auto formatting disabled")
+		end
+		if current_client.supports_method("textDocument/formatting") and enable_auto_format then
 			vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
 			vim.api.nvim_create_autocmd("BufWritePre", {
 				group = augroup,
