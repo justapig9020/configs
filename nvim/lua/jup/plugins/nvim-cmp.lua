@@ -41,6 +41,7 @@ cmp.setup({
 		{ name = "copilot", group_index = 2 }, -- copilot
 		{ name = "nvim_lsp", group_index = 2 }, -- lsp
 		{ name = "luasnip", group_index = 2 }, -- snippets
+		{ name = "crates", group_index = 2 }, -- rust crates
 		{ name = "buffer", group_index = 2 }, -- text within current buffer
 		{ name = "path", group_index = 2 }, -- file system paths
 	}),
