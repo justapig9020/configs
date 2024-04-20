@@ -160,6 +160,7 @@ return packer.startup(function(use)
 	})
 
 	-- Debug
+	use({ "nvim-neotest/nvim-nio" })
 	use({
 		"mfussenegger/nvim-dap",
 	})
