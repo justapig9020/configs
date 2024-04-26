@@ -124,6 +124,15 @@ fi
 
 alias cmd="gh copilot suggest"
 alias vim="nvim"
+# if there is a reverse tunnel, set copy to the remote client
+cnt=`(netstat -lnptu 2>/dev/null) | grep 127.0.0.1:9997 | grep -v grep | wc -l`
+if [[ $cnt -eq 1 ]]; then
+  alias copy="nc -N localhost 9997"
+else
+  alias copy="xsel -ib"
+fi
+alias ls="exa"
+alias disable-clang="touch .clang-format-disable"
 
 eval "$(zoxide init zsh)"
 
