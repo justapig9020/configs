@@ -127,6 +127,12 @@ lspconfig["clangd"].setup({
 	typetypoes = { "c", "cpp" },
 })
 
+-- configure python server
+lspconfig["pyright"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
 return {
 	on_attach = on_attach,
 	capabilities = capabilities,
