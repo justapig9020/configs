@@ -148,6 +148,31 @@ return packer.startup(function(use)
 		end,
 	}) -- language server, auto format, etc.
 
+	-- CSV
+	use({
+		"cameron-wags/rainbow_csv.nvim",
+		config = function()
+			require("rainbow_csv").setup()
+		end,
+		-- optional lazy-loading below
+		module = {
+			"rainbow_csv",
+			"rainbow_csv.fns",
+		},
+		ft = {
+			"csv",
+			"tsv",
+			"csv_semicolon",
+			"csv_whitespace",
+			"csv_pipe",
+			"rfc_csv",
+			"rfc_semicolon",
+		},
+	})
+
+	-- List symbols
+	use("simrat39/symbols-outline.nvim")
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
