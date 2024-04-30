@@ -25,8 +25,10 @@ null_ls.setup({
 				return utils.root_has_file(".eslintrc.js") -- change file extension if you use something else
 			end,
 		}),
+		diagnostics.shellcheck.with({ filetypes = { "sh", "zsh" } }), -- shell script
 		formatting.clang_format, -- c/c++ formatter
 		formatting.rustfmt, -- rust formatter
+		formatting.shfmt.with({ filetypes = { "sh", "zsh" } }), -- shell script
 	},
 	-- configure format on save
 	on_attach = function(current_client, bufnr)
