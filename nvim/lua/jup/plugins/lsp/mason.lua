@@ -16,6 +16,12 @@ if not mason_null_ls_status then
 	return
 end
 
+-- import mason-tool-installer
+local mason_tool_installer_status, mason_tool_installer = pcall(require, "mason-tool-installer")
+if not mason_tool_installer_status then
+	return
+end
+
 -- enable mason
 mason.setup()
 
@@ -32,8 +38,9 @@ mason_lspconfig.setup({
 		-- "gopls",
 		-- "hls",
 		"jsonls",
-		"pylsp",
+		-- "pylsp",
 		"rust_analyzer",
+		"pyright",
 	},
 	-- auto-install configured servers (with lspconfig)
 	automatic_installation = true, -- not the same as ensure_installed
@@ -50,4 +57,15 @@ mason_null_ls.setup({
 	},
 	-- auto-install configured formatters & linters (with null-ls)
 	automatic_installation = true,
+})
+
+mason_tool_installer.setup({
+	ensure_installed = {
+		"black",
+		"debugpy",
+		"flake8",
+		"isort",
+		"mypy",
+		"pylint",
+	},
 })
