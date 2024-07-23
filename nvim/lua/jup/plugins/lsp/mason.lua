@@ -41,6 +41,7 @@ mason_lspconfig.setup({
 		-- "pylsp",
 		"rust_analyzer",
 		"pyright",
+		"bashls",
 	},
 	-- auto-install configured servers (with lspconfig)
 	automatic_installation = true, -- not the same as ensure_installed

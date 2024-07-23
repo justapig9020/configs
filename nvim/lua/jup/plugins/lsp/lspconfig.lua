@@ -133,6 +133,14 @@ lspconfig["pyright"].setup({
 	on_attach = on_attach,
 })
 
+--configure bash server
+lspconfig["bashls"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	cmd = { "bash-language-server", "start" },
+	typetypoes = { "sh", "bash" },
+})
+
 return {
 	on_attach = on_attach,
 	capabilities = capabilities,
